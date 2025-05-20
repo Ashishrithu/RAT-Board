@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rat Board - Task Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/2438/2438078.png" alt="rat-icon">
+    <h1>Rat Board</h1>
+    <p>Track your tasks like chasing a rat in the house!</p>
+  </header>
+
+  <div class="input-area">
+    <input type="text" id="taskTitle" placeholder="Enter task title" />
+    <textarea id="taskDesc" rows="3" placeholder="Enter description/comments"></textarea>
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <div class="board">
+    <div class="column" id="newItem" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>New Item</h3>
+    </div>
+    <div class="column" id="yetToStart" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>Yet to Start</h3>
+    </div>
+    <div class="column" id="inProgress" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>In Progress</h3>
+    </div>
+    <div class="column" id="sentToOffshore" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>Pending with Offshore</h3>
+    </div>
+    <div class="column" id="completed" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>Completed</h3>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <h2>Edit Task</h2>
+    <input type="text" id="modalTitleInput" />
+    <textarea id="modalDescInput" rows="3"></textarea>
+    <p><strong>Created:</strong> <span id="modalDate"></span></p>
+    <button onclick="saveEdit()">Save</button>
+    <button onclick="deleteTask()">Delete</button>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Tharun Ashish Rithu | Contact: <strong>+91-9876543210</strong> | <strong>tharun.rithu@example.com</strong>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
